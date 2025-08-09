@@ -570,8 +570,8 @@ const LandingPage = () => {
                 <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
                   <DevicePhoneMobileIcon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 </div>
-                <div className="font-semibold text-slate-800 dark:text-slate-100 mb-2">1. Upload Image</div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Standard mammogram or scan</div>
+                <div className="font-semibold text-slate-800 dark:text-slate-100 mb-2">1. Upload Details</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Biomarker details or CSV file</div>
               </div>
               
               <div className="text-2xl text-slate-400 dark:text-slate-500">→</div>
