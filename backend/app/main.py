@@ -24,7 +24,7 @@ try:
     ENHANCED_FEATURES_AVAILABLE = True
     print("[OK] Enhanced quantum features loaded successfully")
 except ImportError as e:
-    print(f"[WARNING]  Enhanced features not available: {e}")
+    print(f"[WARNING] Enhanced features not available: {e}")
     ENHANCED_FEATURES_AVAILABLE = False
 
 app = FastAPI(

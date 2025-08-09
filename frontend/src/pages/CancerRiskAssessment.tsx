@@ -197,10 +197,12 @@ const CancerRiskAssessment = () => {
     setPatientInfo(sample.patientInfo);
   };
 
-  const runQuantumAnalysis = async () => {
+  const runQuantumAnalysis = useCallback(async () => {
+    // Immediately set loading state and move to analysis step
     setIsAnalyzing(true);
     setResult(null);
     setError(null);
+    setCurrentStep(4); // Move to analysis step immediately to show loading
 
     try {
       // First try the real API
@@ -210,23 +212,24 @@ const CancerRiskAssessment = () => {
         throw new Error(response.error);
       }
 
-      // Simulate processing time for better UX
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Simulate processing time for better UX (minimum 2 seconds for realistic quantum processing)
+      const minProcessingTime = new Promise(resolve => setTimeout(resolve, 2000));
+      await minProcessingTime;
       
       setResult(response.data);
-      setCurrentStep(4);
     } catch (error) {
       console.warn('API call failed, using simulated result:', error);
       
       // Fallback to simulated result for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const minProcessingTime = new Promise(resolve => setTimeout(resolve, 1500));
+      await minProcessingTime;
+      
       const simulatedResult = apiService.generateSimulatedResult(biomarkerData);
       setResult(simulatedResult);
-      setCurrentStep(4);
     } finally {
       setIsAnalyzing(false);
     }
-  };
+  }, [biomarkerData]);
 
   const resetAssessment = () => {
     setCurrentStep(1);
@@ -398,6 +401,7 @@ const CancerRiskAssessment = () => {
             onNext={runQuantumAnalysis}
             onBack={() => setCurrentStep(2)}
             inputMethod={inputMethod}
+            isAnalyzing={isAnalyzing}
           />
         )}
 

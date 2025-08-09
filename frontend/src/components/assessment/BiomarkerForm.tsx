@@ -48,6 +48,7 @@ interface BiomarkerFormProps {
   onNext: () => void;
   onBack: () => void;
   inputMethod: 'manual' | 'sample' | 'upload';
+  isAnalyzing?: boolean;
 }
 
 const BiomarkerForm: React.FC<BiomarkerFormProps> = ({
@@ -55,7 +56,8 @@ const BiomarkerForm: React.FC<BiomarkerFormProps> = ({
   setBiomarkerData,
   onNext,
   onBack,
-  inputMethod
+  inputMethod,
+  isAnalyzing = false
 }) => {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);

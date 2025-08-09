@@ -329,9 +329,6 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ result, onReset }) =>
               <h4 className="text-xl font-semibold text-slate-800 dark:text-slate-100">
                 Enhanced Quantum Circuit Details
               </h4>
-              <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                Phase 1 & 2 Enhanced
-              </div>
             </div>
             
             {/* Core Circuit Metrics */}
@@ -441,11 +438,11 @@ const AnalysisResults: React.FC<AnalysisResultsProps> = ({ result, onReset }) =>
               </div>
             )}
 
-            {/* Enhanced Quantum Advantage Explanation */}
+            {/* Quantum Advantage Explanation */}
             <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30 rounded-xl p-6 border border-blue-200 dark:border-blue-700">
               <h5 className="font-semibold text-slate-800 dark:text-slate-200 mb-3 flex items-center">
                 <span className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-2"></span>
-                Enhanced Quantum Advantage
+                Quantum Advantage
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
